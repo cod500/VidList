@@ -29,7 +29,7 @@ SECRET_KEY = 'x)8%4d%ub#js0lio8rh=$fx43o(*tb5xet3@6o!$fhqi2aseq%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['vidlist.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
