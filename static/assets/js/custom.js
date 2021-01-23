@@ -31,28 +31,30 @@ Version: 1.0
       responsive: {
         0: {
           items: 1,
-
-
+          loop: true
         },
-        767: {
-          items: 3,
 
-        },
-        1000: {
+        600: {
           items: 3,
+          loop: true
+        },
+
+        1024: {
+          items: 4,
+          loop: true
+        },
+
+        1366: {
+          items: 4,
+          loop: true
         }
       },
-      nav: true,
       loop: true,
-      dots: false,
-      pagination: false,
-      margin: 25,
-      autoHeight: false,
-      stagePadding: 50,
       autoplay: true,
-      autoplaySpeed: 1000,
-      autoplayTimeout: 2000,
-      lazyLoad: true,
+      autoplaySpeed: 3000,
+      autoplayTimeout: 4000,
+      autoplayHoverPause: true,
+      nav: true,
       navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
     });
   }
