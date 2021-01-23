@@ -30,27 +30,29 @@ Version: 1.0
     objowlcarousel.owlCarousel({
       responsive: {
         0: {
-          items: 1
-        },
+          items: 1,
 
-        600: {
-          items: 3
-        },
 
-        1024: {
-          items: 4
         },
+        767: {
+          items: 3,
 
-        1366: {
-          items: 4
+        },
+        1000: {
+          items: 3,
         }
       },
+      nav: true,
       loop: true,
+      dots: false,
+      pagination: false,
+      margin: 25,
+      autoHeight: false,
+      stagePadding: 50,
       autoplay: true,
       autoplaySpeed: 1000,
-      autoplayTimeout: 3000,
-      autoplayHoverPause: true,
-      nav: true,
+      autoplayTimeout: 2000,
+      lazyLoad: true,
       navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
     });
   }
