@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" style="height: 100vh">
+    <!--  ************************* Page Title Starts Here ************************** -->
+    <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h4>{{ favorites.title }}</h4>
+            </div>
+        </div>
+    </div>
+
+    <!--####################### Display Videos Here ###################-->
+    <div class="container">
+        {% if user.id == favorites.user.id %}
+        <a href="{% url 'delete_faves' favorites.id%}" class="btn btn-dark">Delete List</a>
+        <a href="{% url 'update_faves' favorites.id%}" class="btn btn-secondary">Edit List</a>
+        <a href="{% url 'add_video' favorites.id%}" class="btn btn-danger">Add Video</a>
+        {% endif %}
+        <br><br>
+        <div class="row">
+            {% for video in favorites.video_set.all  %}
+            <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="video-card">
+                    <div class="video-card-image">
+                        <iframe class="rounded" width="100%" height="181"
+                            src="https://www.youtube.com/embed/{{video.youtube_id}}" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-body">
+                        <div class="video-title">
+                            <a class="text-truncate" href="#">
+                                <p class="text-truncate">{{video.title}}</p>
+                            </a>
+                        </div>
+                        <div class="video-page text-success">
+                            {{ favorites.user.username }} <a title="" data-placement="top" data-toggle="tooltip"
+                                href="#" data-original-title="Verified"><i
+                                    class="fas fa-check-circle text-success"></i></a>
+                        </div>
+                        {% if user.id == favorites.user.id %}
+                        <a href="{% url 'delete_video' video.id %}" class="btn btn-dark mt-2">Delete Video</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<!-- <div class="card-body">
+    <p class="card-text">{{video.title}}</p>
+    {% if user.id == favorites.user.id %}
+    <a href="{% url 'delete_video' video.id %}" class="btn btn-dark">Delete Video</a>
+    {% endif %}
+</div> -->

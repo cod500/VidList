@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container" style="height: 100vh;">
+    <a href="{% url 'detail_faves' favorites.id %}">
+        <h4>Delete Playlist {{favorites.title}}?</h4>
+    </a>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+    <div class="row">
+        {% for video in favorites.video_set.all %}
+        <div class="col-md-3 mt-3">
+            <div class="card mb-4 shadow-sm">
+                <iframe width="100%" height="225" src="https://www.youtube.com/embed/{{video.youtube_id}}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+</div>
+{% endblock %}

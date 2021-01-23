@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h6>Recent Playlists</h6>
+<div class="video-block section-padding" style="height: 100vh;">
+    {% for recent in recent_faves %}
+    <a class="text-dark" href="{% url 'detail_faves' recent.id %}">
+        <h5 class="text-capitalize font-weight-bold">{{ recent.title }}</h5>
+        <p class="text-secondary">{{ recent.video_set.all | length }} videos</p>
+    </a>
+    <div class="row">
+        {% for video in recent.video_set.all %}
+        <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="video-card">
+                <div class="video-card-image">
+                    <iframe class="rounded" width="100%" height="181"
+                        src="https://www.youtube.com/embed/{{video.youtube_id}}" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-card-body">
+                    <div class="video-title">
+                        <a class="text-truncate" href="#">
+                            <p class="text-truncate">{{video.title}}</p>
+                        </a>
+                    </div>
+                    <div class="video-page text-success">
+                        {{video.favorites.user}} <a title="" data-placement="top" data-toggle="tooltip" href="#"
+                            data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
+                    </div>
+                    <div class="video-view">
+                        1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 1 day ago
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {%  endfor %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
