@@ -12,7 +12,9 @@ import requests
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-YOUTUBE_API_KEY = 'AIzaSyDDUsTzkQhfzSl3ieb0kfjPheJnrNvflKo'
+from decouple import config
+
+YOUTUBE_API_KEY = config('YOUTUBE_API_KEY')
 
 # Create your views here.
 
