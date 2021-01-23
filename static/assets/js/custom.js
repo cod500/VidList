@@ -46,10 +46,9 @@ Version: 1.0
         }
       },
       loop: true,
-      lazyLoad: true,
       autoplay: true,
       autoplaySpeed: 1000,
-      autoplayTimeout: 2000,
+      autoplayTimeout: 3000,
       autoplayHoverPause: true,
       nav: true,
       navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
