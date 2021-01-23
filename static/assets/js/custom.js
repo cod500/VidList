@@ -31,22 +31,15 @@ Version: 1.0
       responsive: {
         0: {
           items: 1,
-          loop: true
-        },
 
-        600: {
+
+        },
+        767: {
           items: 3,
-          loop: true
-        },
 
-        1024: {
-          items: 4,
-          loop: true
         },
-
-        1366: {
-          items: 4,
-          loop: true
+        1000: {
+          items: 3,
         }
       },
       loop: true,
