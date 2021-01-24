@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <h6>Recent Playlists</h6>
-<div class="video-block section-padding" style="height: 100vh;">
+<div class="video-block section-padding">
     {% for recent in recent_faves %}
     <a class="text-dark" href="{% url 'detail_faves' recent.id %}">
         <h5 class="text-capitalize font-weight-bold">{{ recent.title }}</h5>

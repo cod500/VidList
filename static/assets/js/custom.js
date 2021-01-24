@@ -51,7 +51,7 @@ Version: 1.0
       // autoplayTimeout: 4000,
       autoplayHoverPause: true,
       nav: true,
-      navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+      navText: ["<i class='fa fa-chevron-left' style='outline: none;'></i>", "<i class='fa fa-chevron-right' style='outline: none;'></i>"],
     });
   }
 
